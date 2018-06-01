@@ -1,0 +1,14 @@
+{
+  "name": "node_iot_server",
+  "version": "1.0.0",
+  "description": "My iot Server for google compute engine",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abdolmaged Alkhulaifi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
