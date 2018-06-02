@@ -14,7 +14,8 @@ var pool  = mysql.createPool({
     host     : '35.196.190.147',
     user     : 'root',
     password : 'none',
-    database : 'steadia'
+    database : 'steadia',
+
 });
 
 
@@ -23,14 +24,13 @@ app.post('/insertReading', (req, res) => {
     let reading = req.body.reading
     pool.getConnection(function(err, conn){
         if(!err){
-            conn.query("INSERT INTO meters (id, reading) VALUES ?,?",[id,reading],function(err,rows){
-                conn.release();
+            conn.query("INSERT INTO meters (id, reading) VALUES (?,?)",[id,reading],function(err,rows){
+                conn.release()
                 res.end()
                 });
         }
         else{
-            conn.release();
-            res.end()
+            //console.log(err)
         }
     })
 }
